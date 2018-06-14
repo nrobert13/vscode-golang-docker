@@ -1,0 +1,23 @@
+{
+    "workbench.startupEditor": "none",
+    "terminal.integrated.shell.linux": "bash",
+    "editor.minimap.showSlider": "always",
+    "go.inferGopath": true,
+    "workbench.tips.enabled": false,
+    "window.restoreWindows": "all",
+    "terminal.integrated.cursorBlinking": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "extensions.autoUpdate": false,
+    "terminal.integrated.copyOnSelection": true,
+    "editor.scrollBeyondLastLine": false,
+    "docker.showExplorer": false,
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true,
+    "gitlens.showWhatsNewAfterUpgrades": false
+}
