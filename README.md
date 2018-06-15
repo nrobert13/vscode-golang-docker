@@ -28,7 +28,15 @@ After pull or build (described above), run the following script initialize and t
 ./scripts/run-vscode-golang-docker.sh [PROJECT_PATH]
 ```
 
-Note that you need to have the script somewhere on your system. I suggest you to copy this script to `/usr/local/bin` or somewhere on your `$PATH` so that you can run it using following instead:
+Note that you need to have the script somewhere on your system. If you don't have it, install it using following commands:
+
+```plain
+wget https://github.com/hvarga/vscode-golang-docker/raw/master/scripts/run-vscode-golang-docker.sh -O /tmp/run-vscode-golang-docker.sh
+chmod +x /tmp/run-vscode-golang-docker.sh
+sudo mv /tmp/run-vscode-golang-docker.sh /usr/local/bin
+```
+
+Run it using following:
 
 ```plain
 run-vscode-golang-docker.sh [PROJECT_PATH]
