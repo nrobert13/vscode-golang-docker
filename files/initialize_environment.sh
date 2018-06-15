@@ -62,6 +62,15 @@ if [ ! -d $HOME/.vscode/extensions ]; then
 
     echo "Install Text Marker"
     code --install-extension ryu1kn.text-marker
+
+    echo "Install Todo Tree"
+    code --install-extension Gruntfuggly.todo-tree
+
+    echo "Install Code Outline"
+    code --install-extension patrys.vscode-code-outline
+
+    echo "Install Vim"
+    code --install-extension vscodevim.vim
 fi
 
 # Check to see if the Visual Studio Code configuration file exists.
