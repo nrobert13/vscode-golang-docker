@@ -19,5 +19,8 @@
     },
     "workbench.iconTheme": "vscode-icons",
     "vsicons.dontShowNewVersionMessage": true,
-    "gitlens.showWhatsNewAfterUpgrades": false
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": false,
+    "editor.lineNumbers": "relative"
 }
