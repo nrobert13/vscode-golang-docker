@@ -11,9 +11,9 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --no-instal
     libcanberra-gtk-module libgl1-mesa-glx libxss1 sudo firefox xdg-utils
 
 # Create user.
-RUN addgroup --gid 1000 docker && \
-    adduser --uid 1000 --ingroup docker --home /home/docker --shell /bin/bash --disabled-password --gecos "" docker && \
-    usermod -a -G sudo docker && \
+RUN addgroup --force-badname --gid 1000 r.nemeti && \
+    adduser --force-badname --uid 1000 --ingroup r.nemeti --home /home/r.nemeti --shell /bin/bash --disabled-password --gecos "" r.nemeti && \
+    usermod -a -G sudo r.nemeti && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # Install Visual Studio Code.
@@ -27,12 +27,8 @@ COPY files/vscode-config.json /tmp/vscode-config.json
 RUN rm -rf /var/lib/apt/lists/*
 
 # Install Go.
-RUN curl -s https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz | tar -v -C /usr/local -xz
-ENV PATH $PATH:/usr/local/go/bin
-RUN mkdir -p /home/docker/go/src && \
-    chown -R docker:docker /home/docker/go
-ENV GOPATH /home/docker/go
-ENV PATH="/home/docker/go/bin:${PATH}"
+RUN mkdir /usr/lib/go-1.10 && \
+    curl -s https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz | tar -v -C /usr/lib/go-1.10 -xz --strip 1
 
 # Install fixuid.
 RUN curl -SsL https://github.com/boxboat/fixuid/releases/download/v0.4/fixuid-0.4-linux-amd64.tar.gz | tar -C /usr/local/bin -xzf - && \
@@ -49,10 +45,7 @@ RUN curl -SsL https://storage.googleapis.com/shellcheck/shellcheck-latest.linux.
     rm -rf /tmp/shellcheck-latest
 
 # Switch user.
-USER docker:docker
-
-# Set working directory.
-WORKDIR /home/docker/go/src
+USER r.nemeti:r.nemeti
 
 # Fix user permissions.
 ENTRYPOINT ["fixuid"]
