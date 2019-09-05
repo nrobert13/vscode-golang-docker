@@ -79,3 +79,4 @@ if [ ! -f $HOME/.config/Code/User/settings.json ]; then
 	mkdir -p $HOME/.config/Code/User
 	cp /tmp/vscode-config.json $HOME/.config/Code/User/settings.json
 fi
+code

@@ -27,7 +27,7 @@ COPY files/vscode-config.json /tmp/vscode-config.json
 RUN rm -rf /var/lib/apt/lists/*
 
 # Install Go.
-RUN curl -s https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz | tar -v -C /usr/local -xz
+RUN curl -s https://dl.google.com/go/go1.13.linux-amd64.tar.gz | tar -v -C /usr/local -xz
 ENV PATH $PATH:/usr/local/go/bin
 RUN mkdir -p /home/docker/go/src && \
     chown -R docker:docker /home/docker/go
