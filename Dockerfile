@@ -59,4 +59,4 @@ ENTRYPOINT ["fixuid"]
 
 # Initialize environment and start shell.
 COPY files/initialize_environment.sh /usr/local/bin
-CMD initialize_environment.sh;bash
+CMD initialize_environment.sh

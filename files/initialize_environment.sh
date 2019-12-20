@@ -80,3 +80,4 @@ if [ ! -f $HOME/.config/Code/User/settings.json ]; then
 	cp /tmp/vscode-config.json $HOME/.config/Code/User/settings.json
 fi
 code
+tail --pid $(pgrep code | head -1) -f /dev/null
