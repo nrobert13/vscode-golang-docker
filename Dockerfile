@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 # Author and Docker Image information.
 LABEL maintainer="hrvoje.varga@gmail.com"
@@ -8,7 +8,7 @@ LABEL run="./scripts/run-vscode-golang-docker.sh"
 # Install necessary packages.
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
     curl ca-certificates git libgtk2.0 libgconf-2-4 libnss3 libxtst6 \
-    libcanberra-gtk-module libgl1-mesa-glx libxss1 sudo firefox xdg-utils
+    libcanberra-gtk-module libgl1-mesa-glx libxss1 sudo firefox xdg-utils iproute2 dnsutils
 
 # Create user.
 RUN addgroup --gid 1000 docker && \
